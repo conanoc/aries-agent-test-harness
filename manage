@@ -463,7 +463,7 @@ waitForAgent(){
     local duration=$(($SECONDS - $startTime))
     if (( ${duration} >= ${AGENT_TIMEOUT} )); then
       echoRed "\nThe agent failed to start within ${duration} seconds.\n"
-      stopServices all
+      stopHarness
       exit 1
     fi
     sleep 1
